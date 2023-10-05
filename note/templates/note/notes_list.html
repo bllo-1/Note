@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<main class="px-3">
+    <a href="{% url 'notes.new' %}"><button type="button" class="btn btn-secondary  my-5" >add new</button></a>
+
+    {% for note in notes %}
+    
+    <div class="my-5 text-center container">
+        <div class="row justify-content-center"> <!-- قمنا بتغيير هنا -->
+            <div class="col-md-6"> <!-- قمنا بتغيير هنا -->
+                <div class="card mb-4">
+                    <a href="#">
+                        <div class="card-body">
+                            <a href="{% url 'notes.detail' pk=note.id %}" class="text-dark text-decoration-non" ><h5 class="card-title">{{note.title}}</h5></a>
+                             <p class="card-text">{{note.text|truncatechars:7}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</main>
+{% endblock %}

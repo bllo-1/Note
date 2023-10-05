@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<main class="px-3">
+    
+    
+    <h1>welcome to note online</h1>
+    <p>taday is {{today}}</p>
+    <a href="{% url 'notes.list' %}" class="btn btn-primary">check out these notes..!</a>
+    
+  </main>
+{% endblock %}
